@@ -4,6 +4,7 @@
   display: block;
   
 }
+
 .search-bar{
   width: 0;
   flex: 1;
@@ -31,10 +32,22 @@
 }
  
 .header{
+  z-index: 100;
   height:55px;
   display:flex;
   flex-direction:row;
   justify-content:space-between;
+
+  
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: white; 
+  border-bottom-width: 1px;
+  border-bottom-color: #d9d9d9;
+  border-bottom-style: solid;
+  
 }
 .left-section{
 display: flex;
@@ -45,19 +58,53 @@ align-items: center;
   height:30px;
   width: 50px;
   margin-left: 5px;
+  background-color:#f0f0f0;
+  border-color: #f0f0f0;
 }
 
 .voice-search-button{
-   height: 40px;
-  width:45px;
-  border-radius: 60px;
+  height: 42px;
+  width:50px;
+  border-radius: 21px;
   border:none;
+  margin-right:12px;
 }
 .search-button{
   margin-left: -1px;
   height:40px;  
   width:66px;
+  position:relative;
 }
+.search-button  , .voice-search-button, .upload-icon  {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.search-button .tooltip, .voice-search-button .tooltip, .upload-icon .tooltip{
+position: absolute;
+color:black;
+  background-color: gray;
+  padding-top: 4px;
+  padding-bottom: 4px;
+ padding-left: 8px;
+  padding-right: 8px;
+  font-size:12px;
+  bottom: -30px;
+  opacity: 0;
+  pointer-events: none; 
+  transition: opacity 0.15s;
+  white-space: nowrap;
+}
+.search-button:hover .tooltip, .voice-search-button:hover .tooltip, .upload-icon:hover .tooltip{
+  opacity: 1;
+  
+}
+.search-button .voice-search-button{
+  position:relative;
+  
+}
+
 .search{
  
   height:25px;
@@ -80,24 +127,51 @@ align-items: center;
   align-items: center;
   
 }
-.right-section{
-  flex-shrink: 0;
-  display:flex;
-  width:200px;
-  align-items: center;
-  width: 200px;
-  justify-content: space-between;
-  margin-right:40px;
-}
+
 .live{
   height: 24px;
+  padding-right: 15px;;
+  
 }
-.bell{
+.bell-icon{
   height: 24px;
+ 
 }
+
+.bell-container{
+   position:relative;
+  padding-right: 30px;
+  padding-top: 13px;
+}
+.notification-count{
+position:absolute;
+  top:-5px;
+  right: 0;
+  background-color: red;
+  color:white;
+  font-family:Roboto,Arial;
+  font-size:10px;
+  padding-left:6px;
+  padding-right:6px;
+  padding-top: 0.5px;
+  padding-bottom: 2px;
+  border-radius: 20px;
+  margin-right: 29px;
+  margin-top:10px;
+ 
+  
+ }
 .profile{
   height:38px;
   border-radius: 19px;
-
-}
  
+}
+ .right-section{
+   flex-shrink: 0;
+   display:flex;
+   width:200px;
+   align-items: center;
+ vertical-align:top;
+   justify-content: space-between;
+   margin-right:40px;
+ }
